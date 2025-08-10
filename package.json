@@ -2,11 +2,13 @@
   "name": "url-shortener-fullstack",
   "version": "1.0.0",
   "description": "Full-stack URL shortener application",
+  "main": "backend/server.js",
   "scripts": {
     "dev": "./start-dev.sh",
-    "build": "cd frontend && npm run build",
+    "build": "cd frontend && npm install && npm run build && cd .. && cp -r frontend/build backend/",
     "start": "cd backend && npm start",
-    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install"
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "vercel-build": "npm run build"
   },
   "engines": {
     "node": ">=16.0.0"
