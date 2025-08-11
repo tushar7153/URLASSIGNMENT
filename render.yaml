@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: url-shortener
+    env: node
+    buildCommand: ./build.sh
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: BASE_URL
+        sync: false
+      - key: PORT
+        value: 8080
